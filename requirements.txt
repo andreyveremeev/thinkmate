@@ -1,6 +1,6 @@
-python-telegram-bot==21.6
-groq==0.11.0
-python-dotenv==1.0.1
-requests==2.32.3
-PyPDF2==3.0.1
-beautifulsoup4==4.12.3
+python-telegram-bot==21.10
+groq
+requests
+beautifulsoup4
+pypdf
+youtube-transcript-api

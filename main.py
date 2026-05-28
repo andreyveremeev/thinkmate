@@ -605,6 +605,7 @@ def main() -> None:
     app.add_handler(CommandHandler("history", history_command))
     app.add_handler(CommandHandler("language", language_command))
     app.add_handler(CommandHandler("mode", mode_command))
+    app.add_handler(CommandHandler("imagine", imagine_command))
     app.add_handler(CommandHandler("summarize", summarize_command))
     app.add_handler(MessageHandler(filters.Document.PDF, handle_pdf))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))

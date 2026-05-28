@@ -587,18 +587,18 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     mode = get_mode(user_id)
     system_prompt = f"{MODE_SYSTEM_PROMPTS[mode]} {lang_instruction}"
     messages = build_messages(user_id, system_prompt, user_text)
-try:
-    reply = call_groq(messages)
+    try:
+        reply = call_groq(messages)
 
-    add_to_memory(user_id, "user", user_text)
-    add_to_memory(user_id, "assistant", reply)
-    add_to_history(user_id, user_text, reply)
+        add_to_memory(user_id, "user", user_text)
+        add_to_memory(user_id, "assistant", reply)
+        add_to_history(user_id, user_text, reply)
 
-    await update.message.reply_text(reply)
+        await update.message.reply_text(reply)
 
-except Exception as e:
-    logger.error("Groq error: %s", e)
-    await update.message.reply_text("Ошибка.")
+    except Exception as e:
+            logger.error("Groq error: %s", e)
+            await update.message.reply_text("Ошибка.")
 
 
 # ─── Entry point ──────────────────────────────────────────────────────────────

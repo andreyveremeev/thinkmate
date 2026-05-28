@@ -532,7 +532,7 @@ async def imagine_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("🎨 Генерирую изображение...")
 
     try:
-    style = "realistic detailed cinematic"
+        style = "realistic detailed cinematic"
 
     if "anime" in prompt.lower():
         style = "anime style, vibrant, studio ghibli"

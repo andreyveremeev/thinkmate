@@ -534,21 +534,19 @@ async def imagine_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         style = "realistic detailed cinematic"
 
-    if "anime" in prompt.lower():
+        if "anime" in prompt.lower():
         style = "anime style, vibrant, studio ghibli"
 
-    elif "cyberpunk" in prompt.lower():
+        elif "cyberpunk" in prompt.lower():
         style = "cyberpunk neon futuristic"
 
-    elif "fantasy" in prompt.lower():
+        elif "fantasy" in prompt.lower():
         style = "epic fantasy art"
 
-    elif "realistic" in prompt.lower():
+        elif "realistic" in prompt.lower():
         style = "ultra realistic photo"
 
-    full_prompt = f"{style}, {prompt}"
-
-full_prompt = f"{style}, {prompt}"
+        full_prompt = f"{style}, {prompt}"
 
 image_url = f"https://image.pollinations.ai/prompt/{full_prompt}"
 

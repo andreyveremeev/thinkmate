@@ -546,6 +546,8 @@ async def imagine_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif "realistic" in prompt.lower():
         style = "ultra realistic photo"
 
+    full_prompt = f"{style}, {prompt}"
+
 full_prompt = f"{style}, {prompt}"
 
 image_url = f"https://image.pollinations.ai/prompt/{full_prompt}"

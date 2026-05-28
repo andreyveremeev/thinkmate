@@ -13,6 +13,7 @@ from telegram.constants import ChatAction
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes 
 from telegram import InputFile
 from io import BytesIO
+from gtts import gTTS
 from groq import Groq
 
 logging.basicConfig(

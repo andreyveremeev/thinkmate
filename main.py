@@ -593,7 +593,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         add_to_memory(user_id, "assistant", reply)
         add_to_history(user_id, user_text, reply)
         await update.message.reply_text(reply)
-        await send_voice_response(update, reply)
     except Exception as e:
         logger.error("Groq error: %s", e)
         await update.message.reply_text("Sorry, something went wrong. Please try again.")

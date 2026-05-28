@@ -565,17 +565,17 @@ async def imagine_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     except Exception as e:
         logger.error("Image generation error: %s", e)
-        async def send_voice_response(update, text):
+async def send_voice_response(update, text):
             try:
-        tts = gTTS(text=text, lang="ru")
+                tts = gTTS(text=text, lang="ru")
 
-        voice_file = BytesIO()
-        tts.write_to_fp(voice_file)
+                voice_file = BytesIO()
+                tts.write_to_fp(voice_file)
 
-        voice_file.seek(0)
+                voice_file.seek(0)
 
-        await update.message.reply_voice(
-            voice=voice_file
+                await update.message.reply_voice(
+                    voice=voice_file
         )
 
     except Exception as e:

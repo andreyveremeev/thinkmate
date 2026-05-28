@@ -587,7 +587,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     mode = get_mode(user_id)
     system_prompt = f"{MODE_SYSTEM_PROMPTS[mode]} {lang_instruction}"
     messages = build_messages(user_id, system_prompt, user_text)
-
 try:
     reply = call_groq(messages)
 

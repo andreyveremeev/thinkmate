@@ -10,7 +10,8 @@ from pypdf import PdfReader
 from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound, TranscriptsDisabled, CouldNotRetrieveTranscript
 from telegram import Update, BotCommand
 from telegram.constants import ChatAction
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes, from telegram import InputFile
+from io import BytesIO
 from groq import Groq
 
 logging.basicConfig(

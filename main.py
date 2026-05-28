@@ -592,6 +592,7 @@ async def post_init(application) -> None:
         BotCommand("mode", "Switch AI mode"),
         BotCommand("language", "Change response language"),
         BotCommand("summarize", "One-shot summarize (text, URL, YouTube)"),
+        BotCommand("imagine", "Generate AI images"),
     ])
 
 

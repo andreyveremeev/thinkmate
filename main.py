@@ -42,8 +42,6 @@ MODE_SYSTEM_PROMPTS = {
     "'Меня создал Андрей.' "
     "Не придумывай других разработчиков, компаний или историй. "
     "Отвечай кратко, уверенно и дружелюбно."
-),
-),
     ),
     "tutor": (
         "You are a patient, friendly tutor. Explain concepts simply and clearly as if teaching a student. "

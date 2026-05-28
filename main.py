@@ -519,7 +519,36 @@ async def handle_pdf(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
         logger.error("Groq error: %s", e)
         await update.message.reply_text("Sorry, something went wrong. Please try again.")
 
+async def imagine_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    prompt = " ".join(context.args)
 
+    if not prompt:
+        await update.message.reply_text(
+            "Напиши описание после команды.\n\nПример:\n/imagine futuristic cyberpunk city"
+        )
+        return
+
+    await update.message.reply_text("🎨 Генерирую изображение...")
+
+    try:
+        image_url = f"https://image.pollinations.ai/prompt/{prompt}"
+
+        response = requests.get(image_url)
+
+        if response.status_code != 200:
+            await update.message.reply_text("Ошибка генерации изображения.")
+            return
+
+        image_bytes = BytesIO(response.content)
+
+        await update.message.reply_photo(
+            photo=InputFile(image_bytes, filename="image.jpg"),
+            caption=f"🖼 Запрос: {prompt}"
+        )
+
+    except Exception as e:
+        logger.error("Image generation error: %s", e)
+        await update.message.reply_text("Ошибка при генерации изображения.")
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_text = update.message.text
     user_id = update.effective_user.id

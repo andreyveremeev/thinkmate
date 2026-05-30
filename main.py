@@ -371,7 +371,18 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         "  /summarize <url>\n"
         "  /summarize <youtube url>"
     )
-
+async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "🧠 ThinkMate AI\n\n"
+        "Создан Андреем.\n\n"
+        "Режимы:\n"
+        "🎓 Наставник\n"
+        "💻 Программист\n"
+        "🧘 Психолог\n"
+        "🔥 Критик\n"
+        "💡 Генератор идей\n\n"
+        "Версия: 1.0"
+    )
 
 async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     uid = str(update.effective_user.id)

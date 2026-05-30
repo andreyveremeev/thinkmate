@@ -427,6 +427,7 @@ async def mode_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         await update.message.reply_text(
             f"Current mode: {current}\n\n"
             "Available modes:\n"
+            "    assistant — универсальный AI помощник\n"
         "    mentor — AI наставник, объясняет по шагам\n"
 "    programmer — senior разработчик\n"
 "    psychologist — психолог и поддержка\n"

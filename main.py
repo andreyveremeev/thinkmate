@@ -358,7 +358,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         "/reset — clear your conversation memory\n"
         "/history — show recent conversation\n"
         "/mode — switch AI mode\n"
-        "  assistant, tutor, coder, summarizer, analyst, brainstorm\n"
+        "assistant, mentor, programmer, psychologist, critic, brainstorm"
         "/language — set response language\n"
         "  e.g. /language russian | /language english | /language auto\n"
         "/summarize — one-shot summarize without changing your mode\n"

@@ -342,6 +342,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "- Conversation memory: I remember up to 30 exchanges\n\n"
         "Commands:\n"
         "/help — show all commands\n"
+        "/about — информация о боте\n"
         "/mode — switch AI mode\n"
         "/language — set response language\n"
         "/summarize — one-shot summarize (text, URL, or YouTube)\n"
@@ -649,6 +650,7 @@ async def post_init(application) -> None:
     await application.bot.set_my_commands([
         BotCommand("start", "Launch the bot"),
         BotCommand("help", "Show all commands"),
+        BotCommand("about", "О боте"),
         BotCommand("reset", "Clear conversation memory"),
         BotCommand("history", "Show recent conversation"),
         BotCommand("mode", "Switch AI mode"),

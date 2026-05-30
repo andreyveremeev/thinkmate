@@ -427,13 +427,12 @@ async def mode_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         await update.message.reply_text(
             f"Current mode: {current}\n\n"
             "Available modes:\n"
-            "  assistant — general helpful AI (default)\n"
-            "  tutor — explains like a patient teacher\n"
-            "  coder — expert programming assistant\n"
-            "  summarizer — short and concise replies\n"
-            "  analyst — deep analysis, findings, comparisons\n"
-            "  brainstorm — creative ideas and strategy\n\n"
-            "Example: /mode tutor"
+        "    mentor — AI наставник, объясняет по шагам\n"
+"    programmer — senior разработчик\n"
+"    psychologist — психолог и поддержка\n"
+"    critic — жёсткий критик идей\n"
+"    brainstorm — генератор идей\n"
+"Example: /mode mentor"
         )
         return
 
@@ -441,8 +440,8 @@ async def mode_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     if chosen not in VALID_MODES:
         await update.message.reply_text(
             f"Unknown mode: '{chosen}'\n\n"
-            "Valid modes: assistant, tutor, coder, summarizer, analyst, brainstorm\n"
-            "Example: /mode analyst"
+            "Valid modes: assistant, mentor, programmer, psychologist, critic, brainstorm\n"
+"Example: /mode mentor"
         )
         return
 

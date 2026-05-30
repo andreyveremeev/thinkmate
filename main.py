@@ -34,7 +34,14 @@ PREFS_FILE = "user_prefs.json"
 MAX_MEMORY_MESSAGES = 60  # 30 exchanges
 MAX_HISTORY_ITEMS = 5
 
-VALID_MODES = {"assistant", "tutor", "coder", "summarizer", "analyst", "brainstorm"}
+VALID_MODES = {
+    "assistant",
+    "mentor",
+    "programmer",
+    "psychologist",
+    "critic",
+    "brainstorm"
+}
 
 MODE_SYSTEM_PROMPTS = {
     "mentor": (

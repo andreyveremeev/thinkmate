@@ -404,7 +404,7 @@ async def language_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     args = context.args
 
     if not args:
-        current = user_prefs[user_id].get("language", "auto")
+        current = user_prefs[user_id].get("language", "russian")
         await update.message.reply_text(
             f"Your current language setting is: {current}\n\n"
             "To change it: /language <language>\n"

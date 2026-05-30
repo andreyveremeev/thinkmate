@@ -664,6 +664,7 @@ def main() -> None:
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
+    app.add_handler(CommandHandler("about", about_command))
     app.add_handler(CommandHandler("reset", reset_command))
     app.add_handler(CommandHandler("history", history_command))
     app.add_handler(CommandHandler("language", language_command))

@@ -636,6 +636,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
             user_facts[user_id] = {}
 
         user_facts[user_id]["name"] = name
+        save_facts()
     if not user_text or not user_text.strip():
         await update.message.reply_text("I'm here to help — send me a message, a URL, or a PDF.")
         return

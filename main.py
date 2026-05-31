@@ -613,7 +613,13 @@ async def imagine_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_text = update.message.text
     user_id = update.effective_user.id
+if "меня зовут" in user_text.lower():
+    name = user_text.lower().replace("меня зовут", "").strip()
 
+    if user_id not in user_facts:
+        user_facts[user_id] = {}
+
+    user_facts[user_id]["name"] = name
     if not user_text or not user_text.strip():
         await update.message.reply_text("I'm here to help — send me a message, a URL, or a PDF.")
         return

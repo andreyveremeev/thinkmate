@@ -104,7 +104,7 @@ MODE_SYSTEM_PROMPTS = {
 # In-memory stores — reset on bot restart
 user_memory: dict[str, deque] = {}
 user_history: dict[str, list] = {}   # list of {"user": str, "bot": str}
-
+user_facts = {}
 
 # ─── Prefs ────────────────────────────────────────────────────────────────────
 

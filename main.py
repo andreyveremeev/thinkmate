@@ -629,7 +629,6 @@ async def imagine_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_text = update.message.text
     user_id = str(update.effective_user.id)
-    if user_text.lower() == "как меня зовут?":
         if user_id in user_facts and "name" in user_facts[user_id]:
             await update.message.reply_text(
                 f'Тебя зовут {user_facts[user_id]["name"].title()}!'

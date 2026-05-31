@@ -648,15 +648,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
 async def post_init(application) -> None:
     await application.bot.set_my_commands([
-        BotCommand("start", "Launch the bot"),
-        BotCommand("help", "Show all commands"),
-        BotCommand("about", "О боте"),
-        BotCommand("reset", "Clear conversation memory"),
-        BotCommand("history", "Show recent conversation"),
-        BotCommand("mode", "Switch AI mode"),
-        BotCommand("language", "Change response language"),
-        BotCommand("summarize", "One-shot summarize (text, URL, YouTube)"),
-        BotCommand("imagine", "Generate AI images"),
+    BotCommand("start", "Запустить бота"),
+BotCommand("help", "Список команд"),
+BotCommand("about", "О боте"),
+BotCommand("reset", "Очистить память"),
+BotCommand("history", "История диалога"),
+BotCommand("mode", "Сменить режим"),
+BotCommand("language", "Сменить язык"),
+BotCommand("summarize", "Краткое резюме"),
+BotCommand("imagine", "Создать изображение"),
     ])
 
 

@@ -31,6 +31,7 @@ YOUTUBE_PATTERN = re.compile(
 MAX_CONTENT_CHARS = 12000
 MAX_TRANSCRIPT_CHARS = 14000
 PREFS_FILE = "user_prefs.json"
+FACTS_FILE = "facts.json"
 MAX_MEMORY_MESSAGES = 60  # 30 exchanges
 MAX_HISTORY_ITEMS = 5
 
@@ -104,7 +105,7 @@ MODE_SYSTEM_PROMPTS = {
 # In-memory stores — reset on bot restart
 user_memory: dict[str, deque] = {}
 user_history: dict[str, list] = {}   # list of {"user": str, "bot": str}
-user_facts = {}
+user_facts = load_facts()
 
 # ─── Prefs ────────────────────────────────────────────────────────────────────
 
@@ -153,7 +154,22 @@ def get_mode(user_id: int) -> str:
     ensure_user_prefs(str(user_id))
     return user_prefs[str(user_id)].get("mode", "assistant")
 
+FACTS_FILE = "user_facts.json"
 
+
+def load_facts():
+    if os.path.exists(FACTS_FILE):
+        try:
+            with open(FACTS_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            pass
+    return {}
+
+
+def save_facts():
+    with open(FACTS_FILE, "w", encoding="utf-8") as f:
+        json.dump(user_facts, f, ensure_ascii=False, indent=2)
 # ─── Memory ───────────────────────────────────────────────────────────────────
 
 def get_memory(user_id: int) -> deque:

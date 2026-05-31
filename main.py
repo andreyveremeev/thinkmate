@@ -648,8 +648,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
                 )
             return
         if not user_text or not user_text.strip():
-        await update.message.reply_text("I'm here to help — send me a message, a URL, or a PDF.")
-        return
+            await update.message.reply_text("I'm here to help — send me a message, a URL, or a PDF.")
+            return
 
     await context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.TYPING)
 

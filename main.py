@@ -170,6 +170,8 @@ def load_facts():
 def save_facts():
     with open(FACTS_FILE, "w", encoding="utf-8") as f:
         json.dump(user_facts, f, ensure_ascii=False, indent=2)
+        
+user_facts = load_facts()
 # ─── Memory ───────────────────────────────────────────────────────────────────
 
 def get_memory(user_id: int) -> deque:
